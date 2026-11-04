@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Laboratory for Optical Networking and Systems</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body id="top">
+    <header class="navbar">
+        <div class="logo">OPTICAL<span>LAB</span></div>
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="menu-btn" aria-label="Open menu">&#9776;</label>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Our Team</h1>
+        <p>The faculty, researchers and students behind the lab.</p>
+    </section>
+
+    <!-- FEATURE 2: Team page with a role filter (pure CSS) -->
+    <section class="content">
+        <!-- the radio buttons must come BEFORE the buttons and the cards -->
+        <input type="radio" name="team" id="t-all" class="filter-radio" checked>
+        <input type="radio" name="team" id="t-faculty" class="filter-radio">
+        <input type="radio" name="team" id="t-researcher" class="filter-radio">
+        <input type="radio" name="team" id="t-student" class="filter-radio">
+
+        <div class="filter-bar">
+            <label for="t-all" class="filter-btn">All</label>
+            <label for="t-faculty" class="filter-btn">Faculty</label>
+            <label for="t-researcher" class="filter-btn">Researchers</label>
+            <label for="t-student" class="filter-btn">Students</label>
+        </div>
+
+        <!-- NOTE: names below are placeholders. Replace them with real lab members. -->
+        <div class="card-container">
+            <div class="card member faculty">
+                <div class="avatar">LD</div>
+                <h3>Dr. Name Surname</h3>
+                <span class="role-tag">Lab Head &middot; Faculty</span>
+                <p>Optical networking and photonic systems.</p>
+            </div>
+            <div class="card member faculty">
+                <div class="avatar">FM</div>
+                <h3>Dr. Name Surname</h3>
+                <span class="role-tag">Faculty Member</span>
+                <p>Laser technology and fiber optics.</p>
+            </div>
+            <div class="card member researcher">
+                <div class="avatar">RS</div>
+                <h3>Name Surname</h3>
+                <span class="role-tag">Research Scholar</span>
+                <p>Optical imaging and microscopy.</p>
+            </div>
+            <div class="card member researcher">
+                <div class="avatar">RS</div>
+                <h3>Name Surname</h3>
+                <span class="role-tag">Research Scholar</span>
+                <p>High-speed optical data transmission.</p>
+            </div>
+            <div class="card member student">
+                <div class="avatar">ST</div>
+                <h3>Name Surname</h3>
+                <span class="role-tag">B.Tech Student</span>
+                <p>Working on lab instrument setup.</p>
+            </div>
+            <div class="card member student">
+                <div class="avatar">ST</div>
+                <h3>Name Surname</h3>
+                <span class="role-tag">B.Tech Student</span>
+                <p>Assisting in laser experiments.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Laboratory for Optical Networking and Systems | South Asian University</p>
+    </footer>
+    <a href="#top" class="top-btn" title="Back to top">&uarr;</a>
+</body>
+</html>
