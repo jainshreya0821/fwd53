@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Laboratory for Optical Networking and Systems</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <span class="brand-name">OPTICAL<span>LAB</span></span>
+            <span class="brand-tag">Laboratory for Optical Networking and Systems</span>
+        </a>
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="menu-btn" aria-label="Open menu">&#9776; Menu</label>
+        <nav class="pill-nav">
+            <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="team.html">People</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Publications</h1>
+        <p>Research papers published by the lab.</p>
+    </section>
+
+    <!-- FEATURE 3: Publications page with a year filter (pure CSS) -->
+    <section class="content">
+        <!-- the radio buttons must come BEFORE the buttons and the list -->
+        <input type="radio" name="year" id="p-all" class="filter-radio" checked>
+        <input type="radio" name="year" id="p-2026" class="filter-radio">
+        <input type="radio" name="year" id="p-2025" class="filter-radio">
+        <input type="radio" name="year" id="p-2024" class="filter-radio">
+
+        <div class="filter-bar">
+            <label for="p-all" class="filter-btn">All Years</label>
+            <label for="p-2026" class="filter-btn">2026</label>
+            <label for="p-2025" class="filter-btn">2025</label>
+            <label for="p-2024" class="filter-btn">2024</label>
+        </div>
+
+        <!-- NOTE: papers below are sample entries. Replace them with real publications. -->
+        <div class="pub-list">
+            <div class="pub y2026">
+                <span class="year-tag">2026</span>
+                <h3>High-Speed Optical Data Transmission Using Wavelength Division Multiplexing</h3>
+                <p class="authors">Author Name, Author Name, Author Name</p>
+                <p class="journal">Journal of Optical Networking</p>
+            </div>
+            <div class="pub y2026">
+                <span class="year-tag">2026</span>
+                <h3>Non-Invasive Optical Imaging Techniques for Biological Samples</h3>
+                <p class="authors">Author Name, Author Name</p>
+                <p class="journal">International Journal of Photonics</p>
+            </div>
+            <div class="pub y2025">
+                <span class="year-tag">2025</span>
+                <h3>Design of Low-Loss Optical Fiber Links for Campus Networks</h3>
+                <p class="authors">Author Name, Author Name, Author Name</p>
+                <p class="journal">Optical Communications Letters</p>
+            </div>
+            <div class="pub y2025">
+                <span class="year-tag">2025</span>
+                <h3>Light-Wave Modulation Methods Using Semiconductor Lasers</h3>
+                <p class="authors">Author Name, Author Name</p>
+                <p class="journal">Laser Physics and Applications</p>
+            </div>
+            <div class="pub y2024">
+                <span class="year-tag">2024</span>
+                <h3>A Review of Next-Generation Optical Network Architectures</h3>
+                <p class="authors">Author Name, Author Name, Author Name, Author Name</p>
+                <p class="journal">Journal of Optical Networking</p>
+            </div>
+            <div class="pub y2024">
+                <span class="year-tag">2024</span>
+                <h3>Performance Analysis of Optical Amplifiers in Long-Distance Systems</h3>
+                <p class="authors">Author Name, Author Name</p>
+                <p class="journal">International Journal of Photonics</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Laboratory for Optical Networking and Systems | South Asian University</p>
+    </footer>
+    <a href="#top" class="top-btn" title="Back to top">&uarr;</a>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

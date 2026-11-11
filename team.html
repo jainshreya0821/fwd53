@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | Laboratory for Optical Networking and Systems</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <span class="brand-name">OPTICAL<span>LAB</span></span>
+            <span class="brand-tag">Laboratory for Optical Networking and Systems</span>
+        </a>
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="menu-btn" aria-label="Open menu">&#9776; Menu</label>
+        <nav class="pill-nav">
+            <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="team.html" class="active">People</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <section class="page-header">
+        <div class="page-header-text">
+            <span class="eyebrow">Lab research community &amp; global network</span>
+            <h1>People at Optical Lab</h1>
+        </div>
+        <a href="#" class="outline-btn">Join or Visit the Lab</a>
+    </section>
+
+    <main class="content people-page">
+        <!-- NOTE: names marked "Name Surname" are placeholders. Replace with real lab members. -->
+        <!-- radio buttons first, so CSS can show/hide the panels below (no JavaScript) -->
+        <input type="radio" name="grp" id="g-members" class="filter-radio" checked>
+        <input type="radio" name="grp" id="g-collab" class="filter-radio">
+        <input type="radio" name="grp" id="g-alumni" class="filter-radio">
+        <input type="radio" name="sub" id="c-all" class="filter-radio" checked>
+        <input type="radio" name="sub" id="c-prof" class="filter-radio">
+        <input type="radio" name="sub" id="c-scholar" class="filter-radio">
+        <input type="radio" name="sub" id="c-industry" class="filter-radio">
+        <input type="radio" name="msub" id="m-all" class="filter-radio" checked>
+        <input type="radio" name="msub" id="m-btech" class="filter-radio">
+        <input type="radio" name="msub" id="m-scholar" class="filter-radio">
+        <input type="radio" name="msub" id="m-staff" class="filter-radio">
+        <input type="radio" name="asub" id="a-all" class="filter-radio" checked>
+        <input type="radio" name="asub" id="a-scholar" class="filter-radio">
+        <input type="radio" name="asub" id="a-btech" class="filter-radio">
+
+        <div class="tree-box">
+            <div class="tree-root">Lab Research Community <span class="count">13</span></div>
+            <div class="tree-nodes">
+                <label for="g-collab" class="tree-node"><small>Network</small>Associated Collaborators</label>
+                <label for="g-members" class="tree-node"><small>In the lab</small>Current Members</label>
+                <label for="g-alumni" class="tree-node"><small>Global network</small>Alumni</label>
+            </div>
+            <div class="sub-bar sub-collab">
+                <label for="c-all" class="sub-btn">All <span class="count">5</span></label>
+                <label for="c-prof" class="sub-btn">Professors</label>
+                <label for="c-scholar" class="sub-btn">Scholars</label>
+                <label for="c-industry" class="sub-btn">Industry</label>
+            </div>
+            <div class="sub-bar sub-members">
+                <label for="m-all" class="sub-btn">All <span class="count">6</span></label>
+                <label for="m-btech" class="sub-btn">B.Tech Students</label>
+                <label for="m-scholar" class="sub-btn">Research Scholars</label>
+                <label for="m-staff" class="sub-btn">Lab Staff</label>
+            </div>
+            <div class="sub-bar sub-alumni">
+                <label for="a-all" class="sub-btn">All <span class="count">2</span></label>
+                <label for="a-scholar" class="sub-btn">Research Scholars</label>
+                <label for="a-btech" class="sub-btn">B.Tech Graduates</label>
+            </div>
+        </div>
+
+        <!-- Current members -->
+        <div class="panel panel-members">
+            <div class="section-tag pi-only"><span>Principal Investigator &amp; Lab Supervisor</span></div>
+            <article class="pi-card pi-only">
+                <div class="avatar-box big"><div class="silhouette"></div></div>
+                <div class="pi-info">
+                    <h2>Prof. Name Surname</h2>
+                    <span class="pi-role">Professor, Department of Computer Science and Engineering &amp; Principal Investigator</span>
+                    <span class="pi-dept">Faculty of Engineering and Technology &middot; South Asian University, New Delhi, India</span>
+                    <p>Write 3-4 lines about the lab head here: research interests, education, and the work done in optical networking and systems.</p>
+                </div>
+                <a href="#" class="solid-btn">Full Profile &amp; Publications</a>
+            </article>
+            <div class="section-tag"><span>Current Members (6)</span></div>
+            <div class="people-grid">
+                <article class="person-card btech">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">B.Tech Student &middot; Team Lead</span>
+                        <p>Department of Computer Science and Engineering</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card btech">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Shreya Jain</h3>
+                        <span class="person-role">B.Tech Student</span>
+                        <p>Department of Computer Science and Engineering</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card btech">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Navya Jain</h3>
+                        <span class="person-role">B.Tech Student</span>
+                        <p>Department of Computer Science and Engineering</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card scholar">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Dr. Name Surname</h3>
+                        <span class="person-role">Research Scholar</span>
+                        <p>Optical imaging and microscopy</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card scholar">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">Research Scholar</span>
+                        <p>High-speed optical data transmission</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card staff">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">Lab Assistant</span>
+                        <p>Lab instrument setup</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Associated collaborators -->
+        <div class="panel panel-collab">
+            <div class="section-tag"><span>Associated Collaborators (5)</span></div>
+            <div class="people-grid">
+                <article class="person-card prof">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Dr. Name Surname</h3>
+                        <span class="person-role">Associate Professor &amp; Faculty Collaborator</span>
+                        <p>Partner university</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card prof">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Prof. Name Surname</h3>
+                        <span class="person-role">Professor Emeritus &amp; Research Collaborator</span>
+                        <p>Partner university</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card scholar">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Dr. Name Surname</h3>
+                        <span class="person-role">Postdoctoral Scholar</span>
+                        <p>Photonics research group</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card scholar">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">Visiting Scholar</span>
+                        <p>Optical networks</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card industry">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">Senior Engineer</span>
+                        <p>Fiber optics industry</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Alumni -->
+        <div class="panel panel-alumni">
+            <div class="section-tag"><span>Alumni (2)</span></div>
+            <div class="people-grid">
+                <article class="person-card scholar">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">Alumnus &middot; Former Research Scholar</span>
+                        <p>Now at a photonics company</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+                <article class="person-card btech">
+                    <div class="avatar-box"><div class="silhouette"></div></div>
+                    <div class="person-info">
+                        <h3>Name Surname</h3>
+                        <span class="person-role">Alumnus &middot; B.Tech 2025</span>
+                        <p>Now pursuing higher studies</p>
+                        <div class="person-links"><a href="mailto:name@sau.int">Email</a><a href="#">Profile</a></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Laboratory for Optical Networking and Systems | South Asian University</p>
+    </footer>
+    <a href="#top" class="top-btn" title="Back to top">&uarr;</a>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

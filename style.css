@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -237,4 +236,742 @@ footer {
     background-color: #0b0f19;
     color: #64748b;
     font-size: 0.9rem;
+}
+
+
+
+/* =====================================================
+   NEW STYLES  (About section, Team, Publications,
+   Achievements) - everything here is pure CSS, no JS
+   ===================================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* so the sticky navbar doesn't cover section titles */
+}
+
+/* ---------- Mobile menu (checkbox trick, no JS) ---------- */
+.menu-toggle {
+    display: none; /* the hidden checkbox */
+}
+
+.menu-btn {
+    display: none; /* shown only on small screens */
+    border: 1px solid #334155;
+    color: #ffffff;
+    font-size: 1.4rem;
+    padding: 2px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ---------- About section (merged into Home) ---------- */
+.about {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #94a3b8;
+    font-size: 1.05rem;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about .card h3 {
+    color: #00d2ff;
+}
+
+.card p {
+    text-align: center;
+}
+
+/* ---------- Explore More cards ---------- */
+.explore {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.link-card {
+    text-decoration: none;
+}
+
+/* ---------- Header used on the inner pages ---------- */
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, #1e293b 0%, #0b0f19 80%);
+    border-bottom: 1px solid #1e293b;
+}
+
+.page-header h1 {
+    font-size: 2.4rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+.page-header p {
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+.content {
+    padding: 50px 8%;
+    min-height: 50vh;
+}
+
+/* ---------- Filters (Team + Publications) ----------
+   Each filter is a group of hidden radio buttons.
+   The labels act as the buttons. When a radio is
+   :checked, CSS hides the cards that don't match. */
+.filter-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* shows a ring around the buttons when using the keyboard */
+.filter-radio:focus-visible ~ .filter-bar {
+    outline: 2px solid #00d2ff;
+    outline-offset: 8px;
+    border-radius: 30px;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: transparent;
+    color: #a0aec0;
+    border: 2px solid #334155;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #00d2ff;
+    color: #00d2ff;
+}
+
+/* highlight the button of the checked radio */
+#t-all:checked ~ .filter-bar label[for="t-all"],
+#t-faculty:checked ~ .filter-bar label[for="t-faculty"],
+#t-researcher:checked ~ .filter-bar label[for="t-researcher"],
+#t-student:checked ~ .filter-bar label[for="t-student"],
+#p-all:checked ~ .filter-bar label[for="p-all"],
+#p-2026:checked ~ .filter-bar label[for="p-2026"],
+#p-2025:checked ~ .filter-bar label[for="p-2025"],
+#p-2024:checked ~ .filter-bar label[for="p-2024"] {
+    border-color: #00d2ff;
+    color: #00d2ff;
+    background: rgba(0, 210, 255, 0.1);
+}
+
+/* Team: hide members that are not in the chosen group */
+#t-faculty:checked ~ .card-container .member:not(.faculty),
+#t-researcher:checked ~ .card-container .member:not(.researcher),
+#t-student:checked ~ .card-container .member:not(.student) {
+    display: none;
+}
+
+/* Publications: hide papers from other years */
+#p-2026:checked ~ .pub-list .pub:not(.y2026),
+#p-2025:checked ~ .pub-list .pub:not(.y2025),
+#p-2024:checked ~ .pub-list .pub:not(.y2024) {
+    display: none;
+}
+
+/* ---------- Team cards ---------- */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00d2ff, #0072ff);
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.role-tag {
+    color: #00d2ff;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+/* ---------- Publications + Achievements lists ---------- */
+.pub-list,
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pub,
+.timeline-item {
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-left: 4px solid #00d2ff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pub:hover,
+.timeline-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.2);
+}
+
+.pub h3,
+.timeline-item h3 {
+    color: #ffffff;
+    margin: 8px 0;
+}
+
+.year-tag {
+    background: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+    border: 1px solid #00d2ff;
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 0.8rem;
+}
+
+.authors {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.journal {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.timeline-item p {
+    color: #94a3b8;
+}
+
+/* ---------- Back to top (plain link, no JS) ---------- */
+.top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00d2ff, #0072ff);
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+    z-index: 100;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 15px;
+    }
+
+    /* when the checkbox is ticked, show the menu */
+    .menu-toggle:checked ~ nav .nav-links {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-banner {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   SITE THEME OVERRIDES - header, page header, people page
+   (styled after the CiLab website)
+   ===================================================== */
+:root {
+    --bg: #060a18;
+    --panel: #0b1226;
+    --line: #1b2a4a;
+    --cyan: #22d3ee;
+    --mono: "Space Mono", "Courier New", Consolas, monospace;
+}
+
+body { background-color: var(--bg); }
+
+/* ---------- Centered logo + pill menu ---------- */
+.site-header {
+    text-align: center;
+    padding: 18px 4% 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-name {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.brand-name span { color: var(--cyan); }
+
+.brand-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.pill-nav {
+    max-width: 900px;
+    margin: 14px auto;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(11, 18, 38, 0.8);
+    padding: 6px;
+}
+
+.pill-nav .nav-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 6px;
+}
+
+.pill-nav .nav-links a {
+    display: block;
+    padding: 9px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.pill-nav .nav-links a:hover,
+.pill-nav .nav-links a.active {
+    color: var(--cyan);
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.5);
+}
+
+.site-header .menu-btn { margin: 12px auto 0; }
+
+/* ---------- Page header (left aligned, like CiLab) ---------- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+    background: var(--bg);
+    padding: 40px 8% 25px;
+    margin: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.page-header h1 { font-size: 2.6rem; text-shadow: none; }
+.page-header p { margin-top: 4px; }
+
+.eyebrow {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 6px;
+}
+
+.outline-btn {
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(34, 211, 238, 0.5);
+    background: rgba(34, 211, 238, 0.08);
+    padding: 12px 22px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.outline-btn:hover { background: rgba(34, 211, 238, 0.2); }
+
+.solid-btn {
+    background: var(--cyan);
+    color: #04121c;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 10px;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.solid-btn:hover { background: #67e8f9; }
+
+/* ---------- People page ---------- */
+.people-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 4%;
+}
+
+.count {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--cyan);
+    margin-left: 6px;
+}
+
+/* tree box */
+.tree-box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tree-root {
+    display: inline-block;
+    border: 1px solid rgba(34, 211, 238, 0.6);
+    border-radius: 12px;
+    padding: 10px 22px;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(34, 211, 238, 0.06);
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.15);
+}
+
+.tree-nodes {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 34px;
+    padding-top: 22px;
+}
+
+/* connector lines */
+.tree-root::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 34px;
+    background: var(--cyan);
+    margin: 10px auto -44px;
+    position: relative;
+    top: 10px;
+}
+
+.tree-nodes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18%;
+    right: 18%;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, var(--cyan), #38bdf8);
+}
+
+.tree-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    padding: 12px 22px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #080e20;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tree-node::before {
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    width: 2px;
+    height: 22px;
+    background: #38bdf8;
+}
+
+.tree-node small {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 4px;
+}
+
+.tree-node:hover { border-color: var(--cyan); }
+
+#g-members:checked ~ .tree-box label[for="g-members"],
+#g-collab:checked ~ .tree-box label[for="g-collab"],
+#g-alumni:checked ~ .tree-box label[for="g-alumni"] {
+    border-color: var(--cyan);
+    background: rgba(34, 211, 238, 0.1);
+    box-shadow: 0 0 22px rgba(34, 211, 238, 0.3);
+}
+
+/* sub filter (only for collaborators) */
+.sub-bar {
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+#g-members:checked ~ .tree-box .sub-members,
+#g-collab:checked ~ .tree-box .sub-collab,
+#g-alumni:checked ~ .tree-box .sub-alumni { display: flex; }
+
+.sub-btn {
+    min-width: 150px;
+    padding: 10px 20px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #080e20;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sub-btn:hover { border-color: var(--cyan); }
+
+#c-all:checked ~ .tree-box label[for="c-all"],
+#c-prof:checked ~ .tree-box label[for="c-prof"],
+#c-scholar:checked ~ .tree-box label[for="c-scholar"],
+#c-industry:checked ~ .tree-box label[for="c-industry"],
+#m-all:checked ~ .tree-box label[for="m-all"],
+#m-btech:checked ~ .tree-box label[for="m-btech"],
+#m-scholar:checked ~ .tree-box label[for="m-scholar"],
+#m-staff:checked ~ .tree-box label[for="m-staff"],
+#a-all:checked ~ .tree-box label[for="a-all"],
+#a-scholar:checked ~ .tree-box label[for="a-scholar"],
+#a-btech:checked ~ .tree-box label[for="a-btech"] {
+    border-color: var(--cyan);
+    background: rgba(34, 211, 238, 0.12);
+}
+
+/* panels: show only the chosen group */
+.panel { display: none; }
+#g-members:checked ~ .panel-members,
+#g-collab:checked ~ .panel-collab,
+#g-alumni:checked ~ .panel-alumni { display: block; }
+
+#c-prof:checked ~ .panel-collab .person-card:not(.prof),
+#c-scholar:checked ~ .panel-collab .person-card:not(.scholar),
+#c-industry:checked ~ .panel-collab .person-card:not(.industry) { display: none; }
+
+/* current members sub filter (PI block only shows under "All") */
+#m-btech:checked ~ .panel-members .person-card:not(.btech),
+#m-scholar:checked ~ .panel-members .person-card:not(.scholar),
+#m-staff:checked ~ .panel-members .person-card:not(.staff),
+#m-btech:checked ~ .panel-members .pi-only,
+#m-scholar:checked ~ .panel-members .pi-only,
+#m-staff:checked ~ .panel-members .pi-only { display: none; }
+
+/* alumni sub filter */
+#a-scholar:checked ~ .panel-alumni .person-card:not(.scholar),
+#a-btech:checked ~ .panel-alumni .person-card:not(.btech) { display: none; }
+
+/* section label with line */
+.section-tag {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0 22px;
+}
+
+.section-tag::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.section-tag span {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    border: 1px solid rgba(34, 211, 238, 0.45);
+    background: rgba(34, 211, 238, 0.07);
+    padding: 7px 14px;
+    border-radius: 8px;
+}
+
+/* photo placeholder (head + shoulders) */
+.avatar-box {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    border-radius: 12px;
+    background: #0d1630;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar-box.big { width: 190px; height: 215px; border: 3px solid var(--cyan); border-radius: 12px; }
+
+.silhouette::before,
+.silhouette::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2b4d;
+}
+
+.silhouette::before { top: 18%; width: 34%; height: 34%; border-radius: 50%; }
+.silhouette::after { bottom: -12%; width: 70%; height: 42%; border-radius: 50% 50% 0 0; }
+
+/* PI feature card */
+.pi-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    background: var(--panel);
+    border: 1px solid rgba(34, 211, 238, 0.5);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.08);
+}
+
+.pi-info { flex: 1; }
+.pi-info h2 { font-size: 2.2rem; color: #ffffff; line-height: 1.2; }
+.pi-role { display: block; color: var(--cyan); font-weight: 700; font-size: 1.1rem; margin: 4px 0; }
+.pi-dept { display: block; color: #94a3b8; font-size: 0.9rem; margin-bottom: 15px; }
+.pi-info p { color: #cbd5e1; }
+
+/* member cards */
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 22px;
+    margin-bottom: 40px;
+}
+
+.person-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.person-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cyan);
+    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.2);
+}
+
+.person-info h3 { color: #ffffff; font-size: 1.2rem; }
+.person-role { display: block; color: var(--cyan); font-weight: 600; font-size: 0.88rem; margin: 2px 0 6px; }
+.person-info p { color: #94a3b8; font-size: 0.9rem; }
+
+.person-links { display: flex; gap: 15px; margin-top: 10px; }
+
+.person-links a {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-bottom: 1px solid #334155;
+}
+
+.person-links a:hover { color: var(--cyan); border-color: var(--cyan); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+    .pill-nav { display: none; }
+    .menu-toggle:checked ~ .pill-nav { display: block; }
+    .pill-nav .nav-links { flex-direction: column; padding-top: 0; }
+    .site-header .menu-btn { display: inline-block; }
+    .brand-name { font-size: 1.8rem; }
+    .brand-tag { font-size: 0.55rem; letter-spacing: 1.5px; }
+    .page-header h1 { font-size: 2rem; }
+    .pi-card { flex-direction: column; }
+    .tree-nodes::before { display: none; }
+    .tree-node { min-width: 100%; }
+    .tree-node::before, .tree-root::after { display: none; }
+    .tree-nodes { gap: 12px; margin-top: 20px; padding-top: 0; }
+    .people-grid { grid-template-columns: 1fr; }
 }

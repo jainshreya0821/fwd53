@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratory for Optical Networking and Systems</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="navbar">
-        <div class="logo">OPTICAL<span>LAB</span></div>
-        <nav>
+<body id="top">
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-name">OPTICAL<span>LAB</span></span>
+            <span class="brand-tag">Laboratory for Optical Networking and Systems</span>
+        </a>
+        <input type="checkbox" id="menuToggle" class="menu-toggle">
+        <label for="menuToggle" class="menu-btn" aria-label="Open menu">&#9776; Menu</label>
+        <nav class="pill-nav">
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="research.html">Research & Projects</a></li>
-                <li><a href="facilities.html">Facilities</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="pages/team.html">People</a></li>
+                    <li><a href="pages/achievements.html">Achievements</a></li>
+                    <li><a href="pages/publications.html">Publications</a></li>
             </ul>
         </nav>
     </header>
+
     <section class="hero">
         <div class="hero-content">
             <span class="badge">Laboratory for Optical Networking and Systems</span>
@@ -27,11 +32,35 @@
             <h3> SOUTH ASIAN UNIVERSITY </h3>
             <p>Pioneering cutting-edge optical research, high-speed networking, and laser technologies to shape tomorrow's scientific innovations.</p>
             <div class="hero-btns">
-                <a href="research.html" class="btn primary-btn">Explore Research</a>
-                <a href="about.html" class="btn secondary-btn">Learn More</a>
+                <a href="#about" class="btn primary-btn">About the Lab</a>
+                <a href="pages/team.html" class="btn secondary-btn">Meet the People</a>
             </div>
         </div>
     </section>
+
+    <!-- FEATURE 1: About the Lab (merged into the Home page) -->
+    <section class="about" id="about">
+        <h2 class="section-title">About the Lab</h2>
+        <div class="about-text">
+            <p>The Laboratory for Optical Networking and Systems at South Asian University is a research facility working on the science of light and how it is used to carry information. Our work brings together students, researchers and faculty who are curious about optics, lasers and high-speed optical networks.</p>
+            <p>We aim to build a place where students can learn by doing, researchers can test new ideas, and the wider university community can see how light-based technology is shaping the future.</p>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To carry out quality research in optical networking and systems and to train the next generation of scientists.</p>
+            </div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To become a recognised centre for optical research and innovation in the region.</p>
+            </div>
+            <div class="card">
+                <h3>What We Do</h3>
+                <p>Research projects, hands-on lab training, paper publications and collaboration with other institutes.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="highlights">
         <h2 class="section-title">Key Research Focus</h2>
         <div class="card-container">
@@ -52,6 +81,7 @@
             </div>
         </div>
     </section>
+
     <section class="stats-banner">
         <div class="stat-item">
             <h3>15+</h3>
@@ -61,13 +91,34 @@
             <h3>20+</h3>
             <p>Lab Instruments</p>
         </div>
-        <div class="stat-item"> 
+        <div class="stat-item">
             <h3>50+</h3>
             <p>Research Papers</p>
         </div>
     </section>
+
+    <section class="explore">
+        <h2 class="section-title">Explore More</h2>
+        <div class="card-container">
+            <a href="pages/team.html" class="card link-card">
+                <h3>Meet the People</h3>
+                <p>Faculty, researchers and students working in the lab.</p>
+            </a>
+            <a href="pages/achievements.html" class="card link-card">
+                <h3>Achievements</h3>
+                <p>Awards, milestones and recognitions of the lab.</p>
+            </a>
+            <a href="pages/publications.html" class="card link-card">
+                <h3>Publications</h3>
+                <p>Browse our research papers by year.</p>
+            </a>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Laboratory for Optical Networking and Systems | South Asian University</p>
     </footer>
+    <a href="#top" class="top-btn" title="Back to top">&uarr;</a>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
